@@ -46,7 +46,8 @@ func main() {
 	fmt.Printf("Sum:%v\n\n", sum)
 	// find and print the average
 	average := float64(sum) / float64(total)
-	fmt.Printf("AVERAGE\nThe Average is %.2f\n\n", average)
+	roundedaverage := int(math.Round(average))
+	fmt.Printf("AVERAGE\nThe Average is %d\n\n", roundedaverage)
 	// bubble sort accending the array of int
 	for i := 0; i < total-1; i++ {
 		for j := 0; j < total-i-1; j++ {
@@ -62,8 +63,9 @@ func main() {
 	} else {
 		med = float64((nums[total/2-1] + nums[total/2])) / 2
 	}
+	roundedmed := int(math.Round(med))
 	fmt.Println("MEDIAN\nThe data in accending order is", nums)
-	fmt.Printf("So the median is %.2f\n\n", med)
+	fmt.Printf("So the median is %d\n\n", roundedmed)
 	// find the variance and the standard deviation
 	var variSum float64 = 0
 	var diff float64 = 0
@@ -74,6 +76,8 @@ func main() {
 	}
 	vari = variSum / float64(total)
 	stddev := math.Sqrt(vari)
-	fmt.Printf("VARIANCE\nThe variance is %.2f\n\n", vari)
-	fmt.Printf("STANDARD DEVIATION\nThe Standard Deviation is %.2f\n", stddev)
+	roundedvari := int(math.Round(vari))
+	roundedstddev := int(math.Round(stddev))
+	fmt.Printf("VARIANCE\nThe variance is %d\n\n", roundedvari)
+	fmt.Printf("STANDARD DEVIATION\nThe Standard Deviation is %d\n", roundedstddev)
 }
